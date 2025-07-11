@@ -183,34 +183,42 @@ COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1
 --*/
 
 -- country table load
+
 COPY INTO tasty_bytes_dbt_db.raw.country
 FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/country/;
 
 -- franchise table load
+
 COPY INTO tasty_bytes_dbt_db.raw.franchise
 FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/franchise/;
 
 -- location table load
+
 COPY INTO tasty_bytes_dbt_db.raw.location
 FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/location/;
 
 -- menu table load
+
 COPY INTO tasty_bytes_dbt_db.raw.menu
 FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/menu/;
 
 -- truck table load
+
 COPY INTO tasty_bytes_dbt_db.raw.truck
 FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/truck/;
 
 -- customer_loyalty table load
+
 COPY INTO tasty_bytes_dbt_db.raw.customer_loyalty
 FROM @tasty_bytes_dbt_db.public.s3load/raw_customer/customer_loyalty/;
 
 -- order_header table load
+
 COPY INTO tasty_bytes_dbt_db.raw.order_header
 FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/order_header/;
 
 -- order_detail table load
+
 COPY INTO tasty_bytes_dbt_db.raw.order_detail
 FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/order_detail/;
 
