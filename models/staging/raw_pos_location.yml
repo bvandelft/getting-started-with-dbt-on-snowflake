@@ -1,0 +1,22 @@
+models:
+- name: raw_pos_location
+  description: This model provides detailed information about various locations, including
+    their identifiers, names, and geographical details. It is useful for understanding
+    the geographical distribution of locations and can be used for location-based
+    analysis and reporting.
+  columns:
+  - name: location_id
+    description: A unique identifier for each location.
+  - name: placekey
+    description: A standardized identifier for a location, useful for location matching
+      and analysis.
+  - name: location
+    description: The name or description of the location.
+  - name: city
+    description: The city where the location is situated.
+  - name: region
+    description: The region or state where the location is situated.
+  - name: iso_country_code
+    description: The ISO code representing the country of the location.
+  - name: country
+    description: The name of the country where the location is situated.
