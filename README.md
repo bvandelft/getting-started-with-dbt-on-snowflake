@@ -295,9 +295,19 @@ Test your connection and Save
 
 <img width="894" height="498" alt="Screenshot 2025-07-11 at 14 24 57" src="https://github.com/user-attachments/assets/87e25ad7-7fca-4561-bbba-031db042b51f" />
 
+## 💻 dbt & Github Setup
 
+### In the third and last step of your project is the Gihtub connection
 
+Select Github and select your user
 
+Choose the getting-started-with-dbt-on-snowflake repo
+
+<img width="891" height="644" alt="Screenshot 2025-07-11 at 14 32 05" src="https://github.com/user-attachments/assets/5a9f1287-5ac6-4698-b2af-3aeccb2f2c26" />
+
+Your project is ready and start developing in the IDE
+
+<img width="704" height="516" alt="Screenshot 2025-07-11 at 14 35 56" src="https://github.com/user-attachments/assets/38af2076-8cab-4dff-b1b7-95f545c9363b" />
 
 
 
