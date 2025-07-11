@@ -227,7 +227,7 @@ Configure your environment, select the drop down box and select **New Connection
 
 <img width="958" height="434" alt="Screenshot 2025-07-11 at 13 57 15" src="https://github.com/user-attachments/assets/7c019b50-2f91-4002-bdc9-990968975397" />
 
-Select **Snowflake** and name your connection with your **initials* and follow the connection settings like the example Screenshot:
+Select **Snowflake** and name your connection with your **initials** and follow the connection settings like the example Screenshot:
 
 <img width="1064" height="669" alt="Screenshot 2025-07-11 at 14 09 43" src="https://github.com/user-attachments/assets/a13d41cd-32c5-476f-8001-0c77b85473c4" />
 
