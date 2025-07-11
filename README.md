@@ -221,7 +221,16 @@ SELECT 'tasty_bytes_dbt_db setup is now complete' AS note;
 
 
 
-## setup integration
+## setup integration dbt & Snowflake 
+
+https://docs.getdbt.com/docs/cloud/manage-access/set-up-snowflake-oauth
+
+1. Navigate to Account settings.
+2. Select Projects and choose a project from the list.
+3. Click the Development connection field to view its details and set the OAuth method to "Snowflake SSO".
+4. Copy the Redirect URI to use in the later steps.
+
+<img width="1244" height="276" alt="image" src="https://github.com/user-attachments/assets/8be4e95b-4f6a-4cae-a871-9475acbe1fa4" />
 
 CREATE OR REPLACE SECURITY INTEGRATION DBT_CLOUD
   TYPE = OAUTH
@@ -232,3 +241,18 @@ CREATE OR REPLACE SECURITY INTEGRATION DBT_CLOUD
   OAUTH_ISSUE_REFRESH_TOKENS = TRUE
   OAUTH_REFRESH_TOKEN_VALIDITY = 7776000
   OAUTH_USE_SECONDARY_ROLES = 'IMPLICIT';  -- Required for secondary roles
+
+
+### client ID & Secret
+
+with
+
+integration_secrets as (
+  select parse_json(system$show_oauth_client_secrets('DBT_CLOUD')) as secrets
+)
+
+select
+  secrets:"OAUTH_CLIENT_ID"::string     as client_id,
+  secrets:"OAUTH_CLIENT_SECRET"::string as client_secret
+from
+  integration_secrets;
