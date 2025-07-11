@@ -297,11 +297,11 @@ Test your connection and Save
 
 ## 💻 dbt & Github Setup
 
-### In the third and last step of your project is the Gihtub connection
+### In the third and last step of your project is the Github connection
 
-Select Github and select your user
+Select Github and click your user
 
-Choose the getting-started-with-dbt-on-snowflake repo
+Select the getting-started-with-dbt-on-snowflake repo
 
 <img width="891" height="644" alt="Screenshot 2025-07-11 at 14 32 05" src="https://github.com/user-attachments/assets/5a9f1287-5ac6-4698-b2af-3aeccb2f2c26" />
 
