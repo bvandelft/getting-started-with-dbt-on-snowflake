@@ -327,6 +327,6 @@ In your Project Create Branch and give it a name
 
 <img width="486" height="506" alt="Screenshot 2025-07-11 at 14 55 29" src="https://github.com/user-attachments/assets/0bbff975-8901-4efc-9a67-421d55d08469" />
 
-
+At the bottom run **dbt build** to run the whole project in your Snowflake environment
 
 ---
