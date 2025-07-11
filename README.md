@@ -339,6 +339,17 @@ First select on the left side **Orchestration** and than **Environments**
 
 <img width="432" height="178" alt="Screenshot 2025-07-11 at 15 26 33" src="https://github.com/user-attachments/assets/3cc9cafd-8599-4474-8e1e-a4ad73889e47" />
 
+Select **New Environment**
+
+<img width="1135" height="235" alt="Screenshot 2025-07-11 at 15 27 46" src="https://github.com/user-attachments/assets/8b2d2d59-026b-44da-8ddb-9ec4b9297c8d" />
+
+Adjust the settings like the example
+
+<img width="978" height="669" alt="Screenshot 2025-07-11 at 15 29 55" src="https://github.com/user-attachments/assets/8453865f-ef14-496d-a216-b04999ec72db" />
+
+and Test your connection + save
+
+<img width="1121" height="537" alt="Screenshot 2025-07-11 at 15 31 14" src="https://github.com/user-attachments/assets/375d5e72-d540-4c7f-9a9f-89644ba700f5" />
 
 
 ---
