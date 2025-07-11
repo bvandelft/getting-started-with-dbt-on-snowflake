@@ -10,7 +10,7 @@ This repository contains a working **dbt project** to help you get started with 
 
 ### 🔐 Prerequisites
 
-Ensure you have the necessary permissions (use a role like `ACCOUNTADMIN`) and an active Snowflake session.
+First create a Snowflake Trial account and create a new worksheet to start running the following scripts:
 
 ```sql
 USE ROLE accountadmin;
