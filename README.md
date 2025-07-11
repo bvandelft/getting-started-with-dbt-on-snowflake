@@ -218,3 +218,17 @@ FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/order_detail/;
 -- setup completion note
 
 SELECT 'tasty_bytes_dbt_db setup is now complete' AS note;
+
+
+
+## setup integration
+
+CREATE OR REPLACE SECURITY INTEGRATION DBT_CLOUD
+  TYPE = OAUTH
+  ENABLED = TRUE
+  OAUTH_CLIENT = CUSTOM
+  OAUTH_CLIENT_TYPE = 'CONFIDENTIAL'
+  OAUTH_REDIRECT_URI = '<REDIRECT_URI>'
+  OAUTH_ISSUE_REFRESH_TOKENS = TRUE
+  OAUTH_REFRESH_TOKEN_VALIDITY = 7776000
+  OAUTH_USE_SECONDARY_ROLES = 'IMPLICIT';  -- Required for secondary roles
