@@ -249,7 +249,7 @@ For more information check official: [dbt Cloud OAuth setup guide](https://docs.
 
 ---
 
-### 🔐 Create Snowflake Security Integration
+### 🔐 Create a new worksheet in Snowflake and follow the Security Integration scripts
 
 ```sql
 CREATE OR REPLACE SECURITY INTEGRATION DBT_CLOUD
