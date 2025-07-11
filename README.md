@@ -329,7 +329,7 @@ In your Project Create Branch and give it a name
 
 At the bottom run **dbt build** to run the whole project in your Snowflake environment
 
-After the run succeeded you can review the materialzed data in your Snowflake Schema or check the run status of very test and model
+After the run succeeded you can review the materialzed data in your Snowflake Schema or check the run status of every test and model
 
 <img width="1173" height="587" alt="Screenshot 2025-07-11 at 15 17 39" src="https://github.com/user-attachments/assets/b0800f2a-f461-4ca7-b697-527980f8ac02" />
 
