@@ -333,6 +333,12 @@ After the run succeeded you can review the materialzed data in your Snowflake Sc
 
 <img width="1173" height="587" alt="Screenshot 2025-07-11 at 15 17 39" src="https://github.com/user-attachments/assets/b0800f2a-f461-4ca7-b697-527980f8ac02" />
 
+*** 👩‍🏫👨‍🏫 After we run the project succesfully we will create a production Run to visualize our project in dbt Catalog
+
+First select on the left side **Orchestration** and than **Environments** 
+
+<img width="432" height="178" alt="Screenshot 2025-07-11 at 15 26 33" src="https://github.com/user-attachments/assets/3cc9cafd-8599-4474-8e1e-a4ad73889e47" />
+
 
 
 ---
