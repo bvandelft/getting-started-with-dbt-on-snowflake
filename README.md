@@ -227,14 +227,11 @@ Configure your environment, select the drop down box and select New Connection
 
 <img width="958" height="434" alt="Screenshot 2025-07-11 at 13 57 15" src="https://github.com/user-attachments/assets/7c019b50-2f91-4002-bdc9-990968975397" />
 
-Select Snowflake and Follow the steps 
-
-For more information check official: [dbt Cloud OAuth setup guide](https://docs.getdbt.com/docs/cloud/manage-access/set-up-snowflake-oauth) to securely connect your dbt project to Snowflake.
-
-Example Screenshot:
+Select Snowflake and follow the example Screenshot:
 
 <img width="1335" height="730" alt="Screenshot 2025-07-11 at 13 47 47" src="https://github.com/user-attachments/assets/d009db1e-aecc-459f-be22-8da9eebf3713" />
 
+For more information check official: [dbt Cloud OAuth setup guide](https://docs.getdbt.com/docs/cloud/manage-access/set-up-snowflake-oauth) to securely connect your dbt project to Snowflake.
 
 ### ✅ Steps:
 
