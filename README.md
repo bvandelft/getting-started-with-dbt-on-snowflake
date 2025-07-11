@@ -287,6 +287,18 @@ Final Step click Save
 
 <img width="839" height="200" alt="Screenshot 2025-07-11 at 14 14 24" src="https://github.com/user-attachments/assets/a4f8486e-6c56-42a7-988a-097bf39bae03" />
 
+Click on the left Menu Panel on Project and select yours, than continue with the connection setup. Select your new created connection and add your Username and Password
+
+<img width="1242" height="730" alt="Screenshot 2025-07-11 at 14 22 59" src="https://github.com/user-attachments/assets/a7616810-0631-4c34-98f0-97a2cbdea694" />
+
+Test your connection and Save
+
+<img width="894" height="498" alt="Screenshot 2025-07-11 at 14 24 57" src="https://github.com/user-attachments/assets/87e25ad7-7fca-4561-bbba-031db042b51f" />
+
+
+
+
+
 
 
 ---
