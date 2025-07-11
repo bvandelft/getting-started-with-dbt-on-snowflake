@@ -383,9 +383,76 @@ In the Catalog overview select on the right side **View lineage** to review your
 
 <img width="1153" height="715" alt="Screenshot 2025-07-11 at 15 49 05" src="https://github.com/user-attachments/assets/156ef59a-2d85-45af-aea1-c4230142a4c3" />
 
+---
 
+### 📚 What is the dbt Catalog?
 
+The **dbt Catalog** is a centralized, auto-generated documentation system for your dbt project. It includes:
 
+- ✅ **All models and sources** in your project
+- 🧾 **Column-level metadata** (name, type, and descriptions)
+- 🔍 **Lineage graphs** showing how raw data flows through staging models to final outputs
+- 💬 **Documentation strings** written in your `.yml` files for models, tests, and macros
 
-In the left Panel select Catalog
+### 🔎 Why it matters
+
+- **For analysts and stakeholders**: The catalog gives transparency into what data is available, where it comes from, and how it's transformed.
+- **For data teams**: It reduces tribal knowledge, accelerates onboarding, and ensures that data definitions are consistent across the organization.
+- **For governance**: It supports data audits, compliance, and lineage tracking.
+
+💡 After every production job run, the catalog is automatically updated to reflect the latest changes in your dbt project.
+
+---
+
+## 🌱 Where to Go Next — Extend Your dbt Project
+
+### 🔨 1. Add a Staging Layer
+Use the `stg_` convention to create staging models that:
+- Clean column names
+- Apply basic type casting
+- Join multiple raw sources if needed
+
+### 📏 2. Define and Run dbt Tests
+Use `.yml` configurations for:
+- `unique`, `not_null`, `accepted_values`, `relationships`
+- Custom logic validations
+
+### 🧠 3. Add Descriptions & Tags
+Add metadata in `schema.yml`:
+- Model and column descriptions
+- Tags like `tier: core`, `owner: finance_team`
+
+### 🧮 4. Build Business Logic Models
+Develop `int_`, `fct_`, and `dim_` models for analytics:
+- Examples: `dim_customer`, `fct_sales`, `int_order_metrics`
+
+### 📊 5. Integrate with BI Tools
+Feed your semantic-ready dbt models into tools like Tableau, Looker, or Power BI.
+
+### ⏱️ 6. Schedule & Monitor Jobs
+Use dbt Cloud Jobs to:
+- Schedule builds
+- Monitor failures
+- Integrate via API
+
+### 👥 7. Enable Role-Based Access
+Use Snowflake views and row access policies for governed data exposure.
+
+### 🌍 8. Collaborate with Git Workflow
+- Use branches and pull requests
+- Trigger CI/CD validations
+- Promote model changes safely
+
+---
+
+## ✅ Summary
+
+By completing this guide, you have:
+- Built a functioning dbt project on Snowflake
+- Configured dbt Cloud with GitHub and OAuth
+- Executed jobs and reviewed models in the dbt Catalog
+- Learned how to extend your project with best practices
+
+You're now ready to scale your data transformations with dbt Platform!
+
 ---
