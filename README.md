@@ -240,7 +240,7 @@ For more information check official: [dbt Cloud OAuth setup guide](https://docs.
 
 <img width="487" height="458" alt="Screenshot 2025-07-11 at 14 07 03" src="https://github.com/user-attachments/assets/69508134-2783-42b3-83e8-9ef86ed635b8" />
   
-2. Database: **tasty_bytes_dbt_wh**
+2. Database: **tasty_bytes_dbt_db**
 3. Warehouse: **tasty_bytes_dbt_wh**
 4. Set the OAuth method to **Snowflake SSO**.
 5. Copy the **Redirect URI** for the next step.
