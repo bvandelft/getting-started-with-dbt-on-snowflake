@@ -45,6 +45,7 @@ file_format = tasty_bytes_dbt_db.public.csv_ff;
 --*/
 
 -- country table build
+
 CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.country
 (
     country_id NUMBER(18,0),
@@ -58,6 +59,7 @@ CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.country
 COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
 
 -- franchise table build
+
 CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.franchise 
 (
     franchise_id NUMBER(38,0),
@@ -71,6 +73,7 @@ CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.franchise
 COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
 
 -- location table build
+
 CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.location
 (
     location_id NUMBER(19,0),
@@ -84,6 +87,7 @@ CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.location
 COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
 
 -- menu table build
+
 CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.menu
 (
     menu_id NUMBER(19,0),
@@ -101,6 +105,7 @@ CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.menu
 COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
 
 -- truck table build 
+
 CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.truck
 (
     truck_id NUMBER(38,0),
@@ -121,6 +126,7 @@ CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.truck
 COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
 
 -- order_header table build
+
 CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.order_header
 (
     order_id NUMBER(38,0),
@@ -143,6 +149,7 @@ CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.order_header
 COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
 
 -- order_detail table build
+
 CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.order_detail 
 (
     order_detail_id NUMBER(38,0),
@@ -158,6 +165,7 @@ CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.order_detail
 COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
 
 -- customer loyalty table build
+
 CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.customer_loyalty
 (
     customer_id NUMBER(38,0),
