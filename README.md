@@ -353,6 +353,7 @@ and Test your connection + save
 
 After you created the Environment you can create a job, select right bottom corner **Create Job**
 
+<img width="1134" height="712" alt="Screenshot 2025-07-11 at 15 32 24" src="https://github.com/user-attachments/assets/677136b2-551a-46f4-bdf8-5a8a67766cc4" />
 
 
 
