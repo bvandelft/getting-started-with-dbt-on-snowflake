@@ -355,6 +355,25 @@ After you created the Environment you can create a job, select right bottom corn
 
 <img width="1134" height="712" alt="Screenshot 2025-07-11 at 15 32 24" src="https://github.com/user-attachments/assets/677136b2-551a-46f4-bdf8-5a8a67766cc4" />
 
+Create **Deploy Job**
+
+<img width="307" height="197" alt="Screenshot 2025-07-11 at 15 34 33" src="https://github.com/user-attachments/assets/e2340744-a09b-4aaf-943f-0c3a8e4be2b2" />
+
+Adjust the settings like the example and Save the Job
+
+<img width="1133" height="662" alt="Screenshot 2025-07-11 at 15 35 31" src="https://github.com/user-attachments/assets/752f9ade-4e04-42e0-ad1a-00c61e8b4b90" />
+
+and **Run** the job at the right top Corner
+
+<img width="1124" height="532" alt="Screenshot 2025-07-11 at 15 36 23" src="https://github.com/user-attachments/assets/87cabaa1-642e-4b2f-823e-4ba96801fb4d" />
+
+click on the run at the bottom to review the status
+
+<img width="1139" height="165" alt="Screenshot 2025-07-11 at 15 37 05" src="https://github.com/user-attachments/assets/5915f0ef-514a-421b-9fd7-ffa689fbf5cd" />
+
+After the run succeeded we can explore the dbt Catalog
+
+<img width="624" height="379" alt="Screenshot 2025-07-11 at 15 44 47" src="https://github.com/user-attachments/assets/f42188ff-9257-4da4-87cc-1c00288ad202" />
 
 
 ---
