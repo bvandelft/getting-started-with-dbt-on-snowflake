@@ -277,7 +277,7 @@ SELECT
 FROM integration_secrets;
 ```
 
-Copy Paste the Cliend_ID & Secret in the setting tab
+Copy Paste the Client_ID & Secret in the setting tab
 
 <img width="462" height="105" alt="Screenshot 2025-07-11 at 14 13 14" src="https://github.com/user-attachments/assets/f8c27bc4-db97-47d1-9636-225d8df53a2e" />
 
