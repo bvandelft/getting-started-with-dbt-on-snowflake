@@ -213,6 +213,11 @@ SELECT 'tasty_bytes_dbt_db setup is now complete' AS note;
 
 Follow the official [dbt Cloud OAuth setup guide](https://docs.getdbt.com/docs/cloud/manage-access/set-up-snowflake-oauth) to securely connect your dbt project to Snowflake.
 
+Example Screenshot:
+
+<img width="1335" height="730" alt="Screenshot 2025-07-11 at 13 47 47" src="https://github.com/user-attachments/assets/d009db1e-aecc-459f-be22-8da9eebf3713" />
+
+
 ### ✅ Steps:
 
 1. Navigate to **Account Settings** in dbt Cloud.
