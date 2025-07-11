@@ -1,8 +1,8 @@
-# 🚀 Getting Started with dbt on Snowflake
+# 🚀 Getting Started with dbt Platform on Snowflake
 
 ## 📘 Overview
 
-This repository contains a working **dbt project** to help you get started with **dbt on Snowflake** using sample data from the **Tasty Bytes** dataset.
+This repository contains a working **dbt project** to help you get started with **dbt Platform on Snowflake** using sample data from the **Tasty Bytes** dataset.
 
 ---
 
