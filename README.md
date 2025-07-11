@@ -186,9 +186,7 @@ CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.customer_loyalty
 )
 COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
 
-/*--
- raw zone table load 
---*/
+### -- raw zone table load 
 
 -- country table load
 
