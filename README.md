@@ -406,18 +406,21 @@ The **dbt Catalog** is a centralized, auto-generated documentation system for yo
 
 ## 🌱 Where to Go Next — Extend Your dbt Project
 
-### 🔨 1. Add a Staging Layer
-Use the `stg_` convention to create staging models that:
-- Clean column names
-- Apply basic type casting
-- Join multiple raw sources if needed
+### 🧠 1. Add Documentation via dbt Copilot in the Studio
+Use the **Documentation** function from Copilot to create documenation of your model in a .yml file:
+- Select your model as an example in the marts folder
+- Select dbt Copilot on the right, below the editor
+- Select Documentation and Copilot will generate the .yml file
+
+<img width="1150" height="681" alt="Screenshot 2025-07-11 at 16 09 30" src="https://github.com/user-attachments/assets/f45d79b1-ee5b-429e-a4d2-840cf0337b03" />
+
 
 ### 📏 2. Define and Run dbt Tests
 Use `.yml` configurations for:
 - `unique`, `not_null`, `accepted_values`, `relationships`
 - Custom logic validations
 
-### 🧠 3. Add Descriptions & Tags
+### 🔨 3. Add Descriptions & Tags
 Add metadata in `schema.yml`:
 - Model and column descriptions
 - Tags like `tier: core`, `owner: finance_team`
