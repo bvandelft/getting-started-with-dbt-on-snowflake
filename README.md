@@ -227,7 +227,7 @@ Configure your environment, select the drop down box and select New Connection
 
 <img width="958" height="434" alt="Screenshot 2025-07-11 at 13 57 15" src="https://github.com/user-attachments/assets/7c019b50-2f91-4002-bdc9-990968975397" />
 
-Select Snowflake and follow the example Screenshot:
+Select Snowflake and name your connection with your initials and follow the connection settings like the example Screenshot:
 
 <img width="1335" height="730" alt="Screenshot 2025-07-11 at 13 47 47" src="https://github.com/user-attachments/assets/d009db1e-aecc-459f-be22-8da9eebf3713" />
 
@@ -235,9 +235,12 @@ For more information check official: [dbt Cloud OAuth setup guide](https://docs.
 
 ### ✅ Steps:
 
-1. Navigate to **Account Settings** in dbt Cloud.
-2. Select **Projects**, then choose your project.
-3. Click the **Development Connection** field.
+1. Copy paste Account Identifier from Snowflake, via left bottom corner click profile, than select account view account details. 
+
+<img width="487" height="458" alt="Screenshot 2025-07-11 at 14 07 03" src="https://github.com/user-attachments/assets/69508134-2783-42b3-83e8-9ef86ed635b8" />
+  
+2. Database: tasty_bytes_dbt_wh
+3. Warehouse: tasty_bytes_dbt_wh
 4. Set the OAuth method to **Snowflake SSO**.
 5. Copy the **Redirect URI** for the next step.
 
