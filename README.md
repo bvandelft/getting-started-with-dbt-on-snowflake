@@ -309,6 +309,10 @@ Your project is ready and start developing in the IDE
 
 <img width="704" height="516" alt="Screenshot 2025-07-11 at 14 35 56" src="https://github.com/user-attachments/assets/38af2076-8cab-4dff-b1b7-95f545c9363b" />
 
+In your Project Create Branch and give it a name
+
+<img width="486" height="506" alt="Screenshot 2025-07-11 at 14 55 29" src="https://github.com/user-attachments/assets/0bbff975-8901-4efc-9a67-421d55d08469" />
+
 
 
 ---
