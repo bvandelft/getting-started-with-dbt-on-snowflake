@@ -215,19 +215,19 @@ First create a new project via the "Account Home" page
 
 <img width="1302" height="730" alt="Screenshot 2025-07-11 at 13 52 00" src="https://github.com/user-attachments/assets/1920af9c-328d-4113-bdda-c1c30f8dd3ba" />
 
-On the right you will find the + New Project button
+On the right you will find the **+ New Project** button
 
 <img width="384" height="324" alt="Screenshot 2025-07-11 at 13 53 56" src="https://github.com/user-attachments/assets/ef1015a7-1ada-49e6-bb61-8cdc41530bf6" />
 
-Name your Analytics Project with your initials like Analytics_BvD and click continue
+Name your Analytics Project with your **initials** like Analytics_BvD and click continue
 
 <img width="997" height="286" alt="Screenshot 2025-07-11 at 13 55 12" src="https://github.com/user-attachments/assets/4b594a2f-1d3e-4002-b326-6679902d5201" />
 
-Configure your environment, select the drop down box and select New Connection
+Configure your environment, select the drop down box and select **New Connection**
 
 <img width="958" height="434" alt="Screenshot 2025-07-11 at 13 57 15" src="https://github.com/user-attachments/assets/7c019b50-2f91-4002-bdc9-990968975397" />
 
-Select Snowflake and name your connection with your initials and follow the connection settings like the example Screenshot:
+Select **Snowflake** and name your connection with your **initials* and follow the connection settings like the example Screenshot:
 
 <img width="1064" height="669" alt="Screenshot 2025-07-11 at 14 09 43" src="https://github.com/user-attachments/assets/a13d41cd-32c5-476f-8001-0c77b85473c4" />
 
@@ -236,12 +236,12 @@ For more information check official: [dbt Cloud OAuth setup guide](https://docs.
 
 ### ✅ Steps:
 
-1. Copy paste Account Identifier from Snowflake, via left bottom corner click profile, than select account view account details. 
+1. Copy paste **Account Identifier** from Snowflake, via left bottom corner click profile, than select account **view account details** 
 
 <img width="487" height="458" alt="Screenshot 2025-07-11 at 14 07 03" src="https://github.com/user-attachments/assets/69508134-2783-42b3-83e8-9ef86ed635b8" />
   
-2. Database: tasty_bytes_dbt_wh
-3. Warehouse: tasty_bytes_dbt_wh
+2. Database: **tasty_bytes_dbt_wh**
+3. Warehouse: **tasty_bytes_dbt_wh**
 4. Set the OAuth method to **Snowflake SSO**.
 5. Copy the **Redirect URI** for the next step.
 
@@ -251,7 +251,7 @@ For more information check official: [dbt Cloud OAuth setup guide](https://docs.
 
 ### 🔐 Create a new worksheet in Snowflake and follow the Security Integration scripts
 
-Replace the <REDIRECT_URI> in the OAUTH_REDIRECT_URI = ''
+Replace the **<REDIRECT_URI>** in the OAUTH_REDIRECT_URI = ''
 
 ```sql
 CREATE OR REPLACE SECURITY INTEGRATION DBT_CLOUD
@@ -283,11 +283,11 @@ Copy Paste the Client_ID & Secret in the setting tab
 
 <img width="462" height="105" alt="Screenshot 2025-07-11 at 14 13 14" src="https://github.com/user-attachments/assets/f8c27bc4-db97-47d1-9636-225d8df53a2e" />
 
-Final Step click Save
+Final Step click **Save**
 
 <img width="839" height="200" alt="Screenshot 2025-07-11 at 14 14 24" src="https://github.com/user-attachments/assets/a4f8486e-6c56-42a7-988a-097bf39bae03" />
 
-Click on the left Menu Panel on Project and select yours, than continue with the connection setup. Select your new created connection and add your Username and Password
+Click on the left Menu Panel on **Project** and select yours, than continue with the connection setup. Select your new created connection and add your Username and Password
 
 <img width="1242" height="730" alt="Screenshot 2025-07-11 at 14 22 59" src="https://github.com/user-attachments/assets/a7616810-0631-4c34-98f0-97a2cbdea694" />
 
