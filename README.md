@@ -215,7 +215,21 @@ First create a new project via the "Account Home" page
 
 <img width="1302" height="730" alt="Screenshot 2025-07-11 at 13 52 00" src="https://github.com/user-attachments/assets/1920af9c-328d-4113-bdda-c1c30f8dd3ba" />
 
-Select create new connection and Follow the official [dbt Cloud OAuth setup guide](https://docs.getdbt.com/docs/cloud/manage-access/set-up-snowflake-oauth) to securely connect your dbt project to Snowflake.
+On the right you will find the + New Project button
+
+<img width="384" height="324" alt="Screenshot 2025-07-11 at 13 53 56" src="https://github.com/user-attachments/assets/ef1015a7-1ada-49e6-bb61-8cdc41530bf6" />
+
+Name your Analytics Project with your initials like Analytics_BvD and click continue
+
+<img width="997" height="286" alt="Screenshot 2025-07-11 at 13 55 12" src="https://github.com/user-attachments/assets/4b594a2f-1d3e-4002-b326-6679902d5201" />
+
+Configure your environment, select the drop down box and select New Connection
+
+<img width="958" height="434" alt="Screenshot 2025-07-11 at 13 57 15" src="https://github.com/user-attachments/assets/7c019b50-2f91-4002-bdc9-990968975397" />
+
+Select Snowflake and Follow the steps 
+
+For more information check official: [dbt Cloud OAuth setup guide](https://docs.getdbt.com/docs/cloud/manage-access/set-up-snowflake-oauth) to securely connect your dbt project to Snowflake.
 
 Example Screenshot:
 
