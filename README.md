@@ -231,6 +231,5 @@ COPY INTO tasty_bytes_dbt_db.raw.order_detail
 FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/order_detail/;
 
 -- setup completion note
-SELECT 'tasty_bytes_dbt_db setup is now complete' AS note;
 
-ALTER USER admin SET DEFAULT_SECONDARY_ROLES = ('ALL');
+SELECT 'tasty_bytes_dbt_db setup is now complete' AS note;
