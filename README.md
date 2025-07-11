@@ -375,5 +375,17 @@ After the run succeeded we can explore the dbt Catalog
 
 <img width="624" height="379" alt="Screenshot 2025-07-11 at 15 44 47" src="https://github.com/user-attachments/assets/f42188ff-9257-4da4-87cc-1c00288ad202" />
 
+In the left menu Panel select **Catalog**
 
+<img width="1321" height="725" alt="Screenshot 2025-07-11 at 15 46 20" src="https://github.com/user-attachments/assets/d71d70ff-1966-4b59-8e7a-9ce2f90a45c1" />
+
+In the Catalog overview select on the right side **View lineage** to review your Project
+
+<img width="1153" height="715" alt="Screenshot 2025-07-11 at 15 49 05" src="https://github.com/user-attachments/assets/156ef59a-2d85-45af-aea1-c4230142a4c3" />
+
+
+
+
+
+In the left Panel select Catalog
 ---
