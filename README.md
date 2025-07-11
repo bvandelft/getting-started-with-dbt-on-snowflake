@@ -1,237 +1,233 @@
-# Getting Started with dbt on Snowflake
+# 🚀 Getting Started with dbt on Snowflake
 
-## Overview
+## 📘 Overview
 
-This repository contains an example from dbt project to get you started with dbt on Snowflake. 
+This repository contains a working **dbt project** to help you get started with **dbt on Snowflake** using sample data from the **Tasty Bytes** dataset.
 
-## Snowflake Script
+---
 
+## ❄️ Snowflake Setup Script
+
+### 🔐 Prerequisites
+
+Ensure you have the necessary permissions (use a role like `ACCOUNTADMIN`) and an active Snowflake session.
+
+```sql
 USE ROLE accountadmin;
+```
 
+---
+
+### 🏗️ Create Warehouse, Database, Schema, File Format & Stage
+
+```sql
+-- Create Warehouse
 CREATE OR REPLACE WAREHOUSE tasty_bytes_dbt_wh
-    WAREHOUSE_SIZE = 'small'
-    WAREHOUSE_TYPE = 'standard'
-    AUTO_SUSPEND = 60
-    AUTO_RESUME = TRUE
-    INITIALLY_SUSPENDED = TRUE
-    COMMENT = 'warehouse for tasty bytes dbt demo';
+  WAREHOUSE_SIZE = 'small'
+  WAREHOUSE_TYPE = 'standard'
+  AUTO_SUSPEND = 60
+  AUTO_RESUME = TRUE
+  INITIALLY_SUSPENDED = TRUE
+  COMMENT = 'warehouse for tasty bytes dbt demo';
 
 USE WAREHOUSE tasty_bytes_dbt_wh;
 
+-- Create Database & Schema
 CREATE DATABASE IF NOT EXISTS tasty_bytes_dbt_db;
 CREATE OR REPLACE SCHEMA tasty_bytes_dbt_db.raw;
 
-CREATE OR REPLACE FILE FORMAT tasty_bytes_dbt_db.public.csv_ff 
-type = 'csv';
+-- Create File Format & Stage
+CREATE OR REPLACE FILE FORMAT tasty_bytes_dbt_db.public.csv_ff TYPE = 'csv';
 
 CREATE OR REPLACE STAGE tasty_bytes_dbt_db.public.s3load
-COMMENT = 'Quickstarts S3 Stage Connection'
-url = 's3://sfquickstarts/frostbyte_tastybytes/'
-file_format = tasty_bytes_dbt_db.public.csv_ff;
+  COMMENT = 'Quickstarts S3 Stage Connection'
+  URL = 's3://sfquickstarts/frostbyte_tastybytes/'
+  FILE_FORMAT = tasty_bytes_dbt_db.public.csv_ff;
+```
 
-### -- raw zone table build 
+---
 
--- country table build
+### 🧱 Create Raw Zone Tables
 
-CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.country
-(
-    country_id NUMBER(18,0),
-    country VARCHAR(16777216),
-    iso_currency VARCHAR(3),
-    iso_country VARCHAR(2),
-    city_id NUMBER(19,0),
-    city VARCHAR(16777216),
-    city_population VARCHAR(16777216)
-) 
-COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
+<details>
+<summary><strong>Click to expand raw table DDLs</strong></summary>
 
--- franchise table build
+```sql
+-- Country
+CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.country (
+  country_id NUMBER(18,0),
+  country VARCHAR,
+  iso_currency VARCHAR(3),
+  iso_country VARCHAR(2),
+  city_id NUMBER(19,0),
+  city VARCHAR,
+  city_population VARCHAR
+) COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1,"minor":0},"attributes":{"is_quickstart":1,"source":"sql"}}';
 
-CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.franchise 
-(
-    franchise_id NUMBER(38,0),
-    first_name VARCHAR(16777216),
-    last_name VARCHAR(16777216),
-    city VARCHAR(16777216),
-    country VARCHAR(16777216),
-    e_mail VARCHAR(16777216),
-    phone_number VARCHAR(16777216) 
-)
-COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
+-- Franchise
+CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.franchise (
+  franchise_id NUMBER(38,0),
+  first_name VARCHAR,
+  last_name VARCHAR,
+  city VARCHAR,
+  country VARCHAR,
+  e_mail VARCHAR,
+  phone_number VARCHAR
+) COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", ...}';
 
--- location table build
+-- Location
+CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.location (
+  location_id NUMBER(19,0),
+  placekey VARCHAR,
+  location VARCHAR,
+  city VARCHAR,
+  region VARCHAR,
+  iso_country_code VARCHAR,
+  country VARCHAR
+) COMMENT = '{"origin":"sf_sit-is", ...}';
 
-CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.location
-(
-    location_id NUMBER(19,0),
-    placekey VARCHAR(16777216),
-    location VARCHAR(16777216),
-    city VARCHAR(16777216),
-    region VARCHAR(16777216),
-    iso_country_code VARCHAR(16777216),
-    country VARCHAR(16777216)
-)
-COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
+-- Menu
+CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.menu (
+  menu_id NUMBER(19,0),
+  menu_type_id NUMBER(38,0),
+  menu_type VARCHAR,
+  truck_brand_name VARCHAR,
+  menu_item_id NUMBER(38,0),
+  menu_item_name VARCHAR,
+  item_category VARCHAR,
+  item_subcategory VARCHAR,
+  cost_of_goods_usd NUMBER(38,4),
+  sale_price_usd NUMBER(38,4),
+  menu_item_health_metrics_obj VARIANT
+) COMMENT = '{"origin":"sf_sit-is", ...}';
 
--- menu table build
+-- Truck
+CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.truck (
+  truck_id NUMBER(38,0),
+  menu_type_id NUMBER(38,0),
+  primary_city VARCHAR,
+  region VARCHAR,
+  iso_region VARCHAR,
+  country VARCHAR,
+  iso_country_code VARCHAR,
+  franchise_flag NUMBER,
+  year NUMBER,
+  make VARCHAR,
+  model VARCHAR,
+  ev_flag NUMBER,
+  franchise_id NUMBER,
+  truck_opening_date DATE
+) COMMENT = '{"origin":"sf_sit-is", ...}';
 
-CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.menu
-(
-    menu_id NUMBER(19,0),
-    menu_type_id NUMBER(38,0),
-    menu_type VARCHAR(16777216),
-    truck_brand_name VARCHAR(16777216),
-    menu_item_id NUMBER(38,0),
-    menu_item_name VARCHAR(16777216),
-    item_category VARCHAR(16777216),
-    item_subcategory VARCHAR(16777216),
-    cost_of_goods_usd NUMBER(38,4),
-    sale_price_usd NUMBER(38,4),
-    menu_item_health_metrics_obj VARIANT
-)
-COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
+-- Order Header
+CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.order_header (
+  order_id NUMBER,
+  truck_id NUMBER,
+  location_id FLOAT,
+  customer_id NUMBER,
+  discount_id VARCHAR,
+  shift_id NUMBER,
+  shift_start_time TIME,
+  shift_end_time TIME,
+  order_channel VARCHAR,
+  order_ts TIMESTAMP_NTZ,
+  served_ts VARCHAR,
+  order_currency VARCHAR(3),
+  order_amount NUMBER(38,4),
+  order_tax_amount VARCHAR,
+  order_discount_amount VARCHAR,
+  order_total NUMBER(38,4)
+) COMMENT = '{"origin":"sf_sit-is", ...}';
 
--- truck table build 
+-- Order Detail
+CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.order_detail (
+  order_detail_id NUMBER,
+  order_id NUMBER,
+  menu_item_id NUMBER,
+  discount_id VARCHAR,
+  line_number NUMBER,
+  quantity NUMBER(5,0),
+  unit_price NUMBER(38,4),
+  price NUMBER(38,4),
+  order_item_discount_amount VARCHAR
+) COMMENT = '{"origin":"sf_sit-is", ...}';
 
-CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.truck
-(
-    truck_id NUMBER(38,0),
-    menu_type_id NUMBER(38,0),
-    primary_city VARCHAR(16777216),
-    region VARCHAR(16777216),
-    iso_region VARCHAR(16777216),
-    country VARCHAR(16777216),
-    iso_country_code VARCHAR(16777216),
-    franchise_flag NUMBER(38,0),
-    year NUMBER(38,0),
-    make VARCHAR(16777216),
-    model VARCHAR(16777216),
-    ev_flag NUMBER(38,0),
-    franchise_id NUMBER(38,0),
-    truck_opening_date DATE
-)
-COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
+-- Customer Loyalty
+CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.customer_loyalty (
+  customer_id NUMBER,
+  first_name VARCHAR,
+  last_name VARCHAR,
+  city VARCHAR,
+  country VARCHAR,
+  postal_code VARCHAR,
+  preferred_language VARCHAR,
+  gender VARCHAR,
+  favourite_brand VARCHAR,
+  marital_status VARCHAR,
+  children_count VARCHAR,
+  sign_up_date DATE,
+  birthday_date DATE,
+  e_mail VARCHAR,
+  phone_number VARCHAR
+) COMMENT = '{"origin":"sf_sit-is", ...}';
+```
 
--- order_header table build
+</details>
 
-CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.order_header
-(
-    order_id NUMBER(38,0),
-    truck_id NUMBER(38,0),
-    location_id FLOAT,
-    customer_id NUMBER(38,0),
-    discount_id VARCHAR(16777216),
-    shift_id NUMBER(38,0),
-    shift_start_time TIME(9),
-    shift_end_time TIME(9),
-    order_channel VARCHAR(16777216),
-    order_ts TIMESTAMP_NTZ(9),
-    served_ts VARCHAR(16777216),
-    order_currency VARCHAR(3),
-    order_amount NUMBER(38,4),
-    order_tax_amount VARCHAR(16777216),
-    order_discount_amount VARCHAR(16777216),
-    order_total NUMBER(38,4)
-)
-COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
+---
 
--- order_detail table build
+### 📥 Load Data into Raw Tables
 
-CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.order_detail 
-(
-    order_detail_id NUMBER(38,0),
-    order_id NUMBER(38,0),
-    menu_item_id NUMBER(38,0),
-    discount_id VARCHAR(16777216),
-    line_number NUMBER(38,0),
-    quantity NUMBER(5,0),
-    unit_price NUMBER(38,4),
-    price NUMBER(38,4),
-    order_item_discount_amount VARCHAR(16777216)
-)
-COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
+```sql
+-- Country
+COPY INTO tasty_bytes_dbt_db.raw.country FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/country/;
 
--- customer loyalty table build
+-- Franchise
+COPY INTO tasty_bytes_dbt_db.raw.franchise FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/franchise/;
 
-CREATE OR REPLACE TABLE tasty_bytes_dbt_db.raw.customer_loyalty
-(
-    customer_id NUMBER(38,0),
-    first_name VARCHAR(16777216),
-    last_name VARCHAR(16777216),
-    city VARCHAR(16777216),
-    country VARCHAR(16777216),
-    postal_code VARCHAR(16777216),
-    preferred_language VARCHAR(16777216),
-    gender VARCHAR(16777216),
-    favourite_brand VARCHAR(16777216),
-    marital_status VARCHAR(16777216),
-    children_count VARCHAR(16777216),
-    sign_up_date DATE,
-    birthday_date DATE,
-    e_mail VARCHAR(16777216),
-    phone_number VARCHAR(16777216)
-)
-COMMENT = '{"origin":"sf_sit-is", "name":"tasty-bytes-dbt", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"sql"}}';
+-- Location
+COPY INTO tasty_bytes_dbt_db.raw.location FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/location/;
 
-### -- raw zone table load 
+-- Menu
+COPY INTO tasty_bytes_dbt_db.raw.menu FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/menu/;
 
--- country table load
+-- Truck
+COPY INTO tasty_bytes_dbt_db.raw.truck FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/truck/;
 
-COPY INTO tasty_bytes_dbt_db.raw.country
-FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/country/;
+-- Customer Loyalty
+COPY INTO tasty_bytes_dbt_db.raw.customer_loyalty FROM @tasty_bytes_dbt_db.public.s3load/raw_customer/customer_loyalty/;
 
--- franchise table load
+-- Order Header
+COPY INTO tasty_bytes_dbt_db.raw.order_header FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/order_header/;
 
-COPY INTO tasty_bytes_dbt_db.raw.franchise
-FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/franchise/;
+-- Order Detail
+COPY INTO tasty_bytes_dbt_db.raw.order_detail FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/order_detail/;
 
--- location table load
-
-COPY INTO tasty_bytes_dbt_db.raw.location
-FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/location/;
-
--- menu table load
-
-COPY INTO tasty_bytes_dbt_db.raw.menu
-FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/menu/;
-
--- truck table load
-
-COPY INTO tasty_bytes_dbt_db.raw.truck
-FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/truck/;
-
--- customer_loyalty table load
-
-COPY INTO tasty_bytes_dbt_db.raw.customer_loyalty
-FROM @tasty_bytes_dbt_db.public.s3load/raw_customer/customer_loyalty/;
-
--- order_header table load
-
-COPY INTO tasty_bytes_dbt_db.raw.order_header
-FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/order_header/;
-
--- order_detail table load
-
-COPY INTO tasty_bytes_dbt_db.raw.order_detail
-FROM @tasty_bytes_dbt_db.public.s3load/raw_pos/order_detail/;
-
--- setup completion note
-
+-- Setup Completion Check
 SELECT 'tasty_bytes_dbt_db setup is now complete' AS note;
+```
 
+---
 
+## 🔄 dbt & Snowflake Integration Setup
 
-## setup integration dbt & Snowflake 
+Follow the official [dbt Cloud OAuth setup guide](https://docs.getdbt.com/docs/cloud/manage-access/set-up-snowflake-oauth) to securely connect your dbt project to Snowflake.
 
-https://docs.getdbt.com/docs/cloud/manage-access/set-up-snowflake-oauth
+### ✅ Steps:
 
-1. Navigate to Account settings.
-2. Select Projects and choose a project from the list.
-3. Click the Development connection field to view its details and set the OAuth method to "Snowflake SSO".
-4. Copy the Redirect URI to use in the later steps.
+1. Navigate to **Account Settings** in dbt Cloud.
+2. Select **Projects**, then choose your project.
+3. Click the **Development Connection** field.
+4. Set the OAuth method to **Snowflake SSO**.
+5. Copy the **Redirect URI** for the next step.
 
-<img width="1244" height="276" alt="image" src="https://github.com/user-attachments/assets/8be4e95b-4f6a-4cae-a871-9475acbe1fa4" />
+![Snowflake OAuth UI Example](https://github.com/user-attachments/assets/8be4e95b-4f6a-4cae-a871-9475acbe1fa4)
 
+---
+
+### 🔐 Create Snowflake Security Integration
+
+```sql
 CREATE OR REPLACE SECURITY INTEGRATION DBT_CLOUD
   TYPE = OAUTH
   ENABLED = TRUE
@@ -240,19 +236,21 @@ CREATE OR REPLACE SECURITY INTEGRATION DBT_CLOUD
   OAUTH_REDIRECT_URI = '<REDIRECT_URI>'
   OAUTH_ISSUE_REFRESH_TOKENS = TRUE
   OAUTH_REFRESH_TOKEN_VALIDITY = 7776000
-  OAUTH_USE_SECONDARY_ROLES = 'IMPLICIT';  -- Required for secondary roles
+  OAUTH_USE_SECONDARY_ROLES = 'IMPLICIT';
+```
 
+---
 
-### client ID & Secret
+### 🔑 Retrieve OAuth Client ID & Secret
 
-with
-
-integration_secrets as (
-  select parse_json(system$show_oauth_client_secrets('DBT_CLOUD')) as secrets
+```sql
+WITH integration_secrets AS (
+  SELECT PARSE_JSON(SYSTEM$SHOW_OAUTH_CLIENT_SECRETS('DBT_CLOUD')) AS secrets
 )
+SELECT
+  secrets:"OAUTH_CLIENT_ID"::STRING     AS client_id,
+  secrets:"OAUTH_CLIENT_SECRET"::STRING AS client_secret
+FROM integration_secrets;
+```
 
-select
-  secrets:"OAUTH_CLIENT_ID"::string     as client_id,
-  secrets:"OAUTH_CLIENT_SECRET"::string as client_secret
-from
-  integration_secrets;
+---
