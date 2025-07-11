@@ -20,8 +20,6 @@ USE WAREHOUSE tasty_bytes_dbt_wh;
 
 CREATE DATABASE IF NOT EXISTS tasty_bytes_dbt_db;
 CREATE OR REPLACE SCHEMA tasty_bytes_dbt_db.raw;
-CREATE OR REPLACE SCHEMA tasty_bytes_dbt_db.dev;
-CREATE OR REPLACE SCHEMA tasty_bytes_dbt_db.prod;
 
 CREATE OR REPLACE FILE FORMAT tasty_bytes_dbt_db.public.csv_ff 
 type = 'csv';
@@ -31,9 +29,7 @@ COMMENT = 'Quickstarts S3 Stage Connection'
 url = 's3://sfquickstarts/frostbyte_tastybytes/'
 file_format = tasty_bytes_dbt_db.public.csv_ff;
 
-/*--
- raw zone table build 
---*/
+### -- raw zone table build 
 
 -- country table build
 
