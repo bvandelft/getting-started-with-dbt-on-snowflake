@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains an example dbt project to get you started with dbt on Snowflake. 
+This repository contains an example from dbt project to get you started with dbt on Snowflake. 
 
 ## Snowflake Script
 
