@@ -452,7 +452,7 @@ Use Snowflake views and row access policies for governed data exposure.
 
 By completing this guide, you have:
 - Built a functioning dbt project on Snowflake
-- Configured dbt Cloud with GitHub and OAuth
+- Configured dbt Platform with GitHub and OAuth
 - Executed jobs and reviewed models in the dbt Catalog
 - Learned how to extend your project with best practices
 
