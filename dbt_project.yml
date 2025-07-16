@@ -4,6 +4,21 @@ version: "1.0"
 config-version: 2
 profile: tasty_bytes
 
+default:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: IPBAEZF-AZURE_DEMO
+      user: admin
+      password: 6Ppksp8hzvix6mFnk3B
+      role: accountadmin
+      database: TASTY_BYTES_DBT_DB
+      warehouse: TASTY_BYTES_DBT_WH
+      schema: bvdelft_fusion
+      threads: 1
+
+
 ## Sources
 model-paths: [models]
 analysis-paths: [analysis]
