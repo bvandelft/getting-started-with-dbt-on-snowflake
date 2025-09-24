@@ -23,7 +23,7 @@ USE ROLE accountadmin;
 ```sql
 -- Create Warehouse
 CREATE OR REPLACE WAREHOUSE tasty_bytes_dbt_wh
-  WAREHOUSE_SIZE = 'small'
+  WAREHOUSE_SIZE = 'medium'
   WAREHOUSE_TYPE = 'standard'
   AUTO_SUSPEND = 60
   AUTO_RESUME = TRUE
