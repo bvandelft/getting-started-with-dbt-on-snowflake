@@ -23,7 +23,7 @@ USE ROLE accountadmin;
 ```sql
 -- Create Warehouse
 CREATE OR REPLACE WAREHOUSE tasty_bytes_dbt_wh
-  WAREHOUSE_SIZE = 'small'
+  WAREHOUSE_SIZE = 'medium'
   WAREHOUSE_TYPE = 'standard'
   AUTO_SUSPEND = 60
   AUTO_RESUME = TRUE
@@ -306,22 +306,6 @@ Select the getting-started-with-dbt-on-snowflake repo
 <img width="891" height="644" alt="Screenshot 2025-07-11 at 14 32 05" src="https://github.com/user-attachments/assets/5a9f1287-5ac6-4698-b2af-3aeccb2f2c26" />
 
 Your project is ready and start developing in the IDE
-
-<img width="704" height="516" alt="Screenshot 2025-07-11 at 14 35 56" src="https://github.com/user-attachments/assets/38af2076-8cab-4dff-b1b7-95f545c9363b" />
-
-Before we can build the whole project we need to verify one connection setting, please select account settings and the left bottom
-
-<img width="897" height="705" alt="Screenshot 2025-07-11 at 15 00 33" src="https://github.com/user-attachments/assets/0ecd0eb8-9b56-4ae3-9c66-9b23033c7a87" />
-
-In the settings tab select **credentials** and click your project
-
-<img width="679" height="554" alt="Screenshot 2025-07-11 at 15 01 32" src="https://github.com/user-attachments/assets/8111ba82-1f7e-4b66-bbd3-14907a784454" />
-
-Check if the Role, Database & warehouse is correctly filled like the example, if not, please add those settings and save
-
-<img width="983" height="726" alt="Screenshot 2025-07-11 at 15 03 16" src="https://github.com/user-attachments/assets/fd538c04-321b-45c0-87d8-c63e44b43072" />
-
-Go back to Project and Start running your project
 
 In your Project Create Branch and give it a name
 
