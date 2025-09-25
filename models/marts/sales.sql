@@ -1,1 +1,1 @@
-select * from TASTY_BYTES_DBT_DB.DBT_BVANDELFT.SALES_METRICS_BY_LOCATION
+select * from {{ ref('sales_metrics_by_location') }}

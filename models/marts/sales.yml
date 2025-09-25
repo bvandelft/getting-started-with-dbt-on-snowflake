@@ -1,6 +1,5 @@
 models:
 - name: sales
-  description: This model provides a comprehensive view of sales metrics by location,
-    aggregating data to facilitate analysis of sales performance across different
-    regions. It is designed to support business decisions by offering insights into
-    sales trends and patterns.
+  description: This model retrieves all sales metrics by location, providing a comprehensive
+    view of sales performance across different areas. It is useful for analyzing sales
+    trends and making data-driven decisions to optimize sales strategies.
