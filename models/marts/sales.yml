@@ -1,0 +1,6 @@
+models:
+- name: sales
+  description: This model provides a comprehensive view of sales metrics by location,
+    aggregating data to facilitate analysis of sales performance across different
+    regions. It is designed to support business decisions by offering insights into
+    sales trends and patterns.
