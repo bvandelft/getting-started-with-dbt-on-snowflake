@@ -4,9 +4,7 @@ sources:
     description: "Point of Sale source data"
     database: tasty_bytes_dbt_db
     schema: RAW
-
     tables:
-
       - name: COUNTRY
         description: "Country reference data"
         columns:
