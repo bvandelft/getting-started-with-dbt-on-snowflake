@@ -2,9 +2,9 @@ SELECT
     t.truck_id,
     t.primary_city,
     t.year,
+    COUNT(oh.order_id) AS total_orders,
     SUM(oh.order_total) AS total_sales,
-    SUM(oh.order_amount) AS total_amount,
-    SUM(oh.order_tax_amount) AS total_tax
+    AVG(oh.order_total) AS average_order_value
 FROM 
     {{ ref('raw_pos_order_header') }} oh
 JOIN 
