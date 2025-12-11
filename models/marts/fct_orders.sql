@@ -1,5 +1,12 @@
 -- models/marts/fct_orders.sql
 
+{{ 
+    config(
+        materialized = 'view' if target.name != 'prod' else 'table'
+    ) 
+}}
+
+
 with order_header as (
     select
         oh.order_id,

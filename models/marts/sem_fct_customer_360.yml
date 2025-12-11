@@ -1,0 +1,71 @@
+semantic_models:
+  - name: customer_360
+    description: Loyalty customer 360 view with profile and behavioral metrics.
+    model: ref('fct_customer_360')
+
+    defaults:
+      agg_time_dimension: last_order_date
+
+    entities:
+      - name: customer
+        type: primary
+        expr: customer_id
+
+    dimensions:
+      - name: customer_id
+        type: categorical
+
+      - name: first_name
+        type: categorical
+
+      - name: last_name
+        type: categorical
+
+      - name: city
+        type: categorical
+
+      - name: country
+        type: categorical
+
+      - name: preferred_language
+        type: categorical
+
+      - name: gender
+        type: categorical
+
+      - name: marital_status
+        type: categorical
+
+      - name: children_count
+        type: categorical
+
+      - name: sign_up_date
+        type: time
+        type_params:
+          time_granularity: day
+
+      - name: birthday_date
+        type: time
+        type_params:
+          time_granularity: day
+
+      - name: last_order_date
+        type: time
+        type_params:
+          time_granularity: day
+
+    measures:
+      - name: customer_total_orders
+        description: Total orders placed by the customer.
+        agg: sum
+        expr: total_orders
+        create_metric: true
+        # (optional but explicit)
+        # agg_time_dimension: last_order_date
+
+      - name: customer_total_revenue_usd
+        description: Total revenue from the customer (USD).
+        agg: sum
+        expr: total_revenue_usd
+        create_metric: true
+        # agg_time_dimension: last_order_date
