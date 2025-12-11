@@ -1,0 +1,24 @@
+models:
+- name: raw_pos_order_detail
+  description: This model provides detailed information about each order in the point-of-sale
+    system, capturing specifics about each item ordered, including pricing and discounts.
+  columns:
+  - name: order_detail_id
+    description: A unique identifier for each order detail entry.
+  - name: order_id
+    description: The identifier for the order to which this detail belongs.
+  - name: menu_item_id
+    description: The identifier for the menu item included in the order.
+  - name: discount_id
+    description: The identifier for any discount applied to this order item.
+  - name: line_number
+    description: The line number of the item in the order, indicating its sequence.
+  - name: quantity
+    description: The number of units of the menu item ordered.
+  - name: unit_price
+    description: The price per unit of the menu item.
+  - name: price
+    description: The total price for the quantity of the menu item ordered, before
+      any discounts.
+  - name: order_item_discount_amount
+    description: The amount of discount applied to this specific order item.

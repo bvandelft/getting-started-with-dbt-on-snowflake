@@ -1,0 +1,21 @@
+models:
+- name: raw_pos_franchise
+  description: This model provides a comprehensive view of franchise information sourced
+    from the 'tb_101' database. It includes details such as franchise identifiers,
+    personal contact information, and location data, which can be used for franchise
+    management and analysis.
+  columns:
+  - name: franchise_id
+    description: A unique identifier for each franchise.
+  - name: first_name
+    description: The first name of the franchise contact person.
+  - name: last_name
+    description: The last name of the franchise contact person.
+  - name: city
+    description: The city where the franchise is located.
+  - name: country
+    description: The country where the franchise is located.
+  - name: e_mail
+    description: The email address of the franchise contact person.
+  - name: phone_number
+    description: The phone number of the franchise contact person.
