@@ -2,7 +2,7 @@
 
 {{ 
     config(
-        materialized = 'view' if target.name != 'prod' else 'table'
+        materialized = 'view'
     ) 
 }}
 
