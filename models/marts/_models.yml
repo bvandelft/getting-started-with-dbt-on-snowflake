@@ -1,0 +1,9 @@
+models:
+  - name: time_spine_daily
+    description: A time spine with one row per day, used by the Semantic Layer.
+    time_spine:
+      standard_granularity_column: date_day   # base column for time joins
+    columns:
+      - name: date_day
+        description: The base date column for daily granularity
+        granularity: day

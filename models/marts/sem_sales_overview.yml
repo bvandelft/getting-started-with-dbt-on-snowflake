@@ -1,0 +1,60 @@
+semantic_models:
+  - name: sales_overview
+    description: Sales overview model aggregating order data by truck and time.
+    model: ref('sales_overview')
+
+    defaults:
+      # Default time dimension for aggregations
+      agg_time_dimension: order_date
+
+    entities:
+      - name: sales_overview
+        type: primary
+
+      - name: truck
+        type: foreign
+        expr: truck_id
+
+    dimensions:
+      - name: primary_city
+        type: categorical
+
+      # Day-level time dimension
+      - name: order_date
+        type: time
+        type_params:
+          time_granularity: day
+        # If needed, you can add:
+        # expr: date_trunc('day', order_date)
+
+      # Year-level time dimension (renamed from `year` → `order_year`)
+      - name: order_year
+        type: time
+        expr: date_trunc('year', order_date)
+        type_params:
+          time_granularity: year
+
+    measures:
+      - name: total_orders
+        description: Total number of orders.
+        agg: sum
+        create_metric: true
+        # expr: total_orders  # uncomment if the column name differs
+
+      - name: total_sales
+        description: Total sales amount.
+        agg: sum
+        create_metric: true
+        # expr: total_sales_amount
+
+      - name: average_order_value
+        description: Average value of orders.
+        agg: average
+        create_metric: true
+        # expr: average_order_value
+
+      - name: count_truck
+        description: Number of distinct trucks with at least one order.
+        agg: count_distinct
+        expr: truck_id
+        create_metric: true
