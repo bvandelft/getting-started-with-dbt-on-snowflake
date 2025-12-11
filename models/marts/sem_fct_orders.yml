@@ -1,0 +1,100 @@
+semantic_models:
+  - name: orders
+    description: One row per order, with truck, location, and customer attributes.
+    model: ref('fct_orders')
+
+    defaults:
+      agg_time_dimension: order_date
+
+    entities:
+      - name: order
+        type: primary
+        expr: order_id
+
+      - name: truck
+        type: foreign
+        expr: truck_id
+
+      - name: customer
+        type: foreign
+        expr: customer_id
+
+      - name: location
+        type: foreign
+        expr: location_id
+
+    dimensions:
+      - name: order_date
+        type: time
+        type_params:
+          time_granularity: day
+
+      - name: order_month
+        type: time
+        expr: date_trunc('month', order_date)
+        type_params:
+          time_granularity: month
+
+      - name: order_year
+        type: time
+        expr: date_trunc('year', order_date)
+        type_params:
+          time_granularity: year
+
+      - name: order_channel
+        type: categorical
+
+      - name: truck_primary_city
+        type: categorical
+        expr: primary_city
+
+      - name: truck_region
+        type: categorical
+        expr: region
+
+      - name: truck_country
+        type: categorical
+        expr: country
+
+    measures:
+      - name: order_count
+        description: Number of orders.
+        agg: count
+        expr: order_id
+        create_metric: true
+
+      - name: total_order_amount
+        description: Sum of order_amount.
+        agg: sum
+        expr: order_amount
+        create_metric: true
+
+      - name: total_order_total
+        description: Sum of final order total.
+        agg: sum
+        expr: order_total
+        create_metric: true
+
+      - name: total_order_discount_amount
+        description: Sum of discount amounts across orders.
+        agg: sum
+        expr: order_discount_amount
+        create_metric: true
+
+      - name: total_order_tax_amount
+        description: Sum of tax amounts across orders.
+        agg: sum
+        expr: order_tax_amount
+        create_metric: true
+
+      - name: total_item_quantity
+        description: Total quantity of items per order.
+        agg: sum
+        expr: total_item_quantity
+        create_metric: false
+
+      - name: line_count
+        description: Number of lines per order.
+        agg: sum
+        expr: line_count
+        create_metric: false
