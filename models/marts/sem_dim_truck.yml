@@ -1,0 +1,56 @@
+semantic_models:
+  - name: trucks
+    description: Truck dimension with fleet and location attributes.
+    model: ref('dim_truck')
+
+    # Use truck opening date as the default time dimension if needed
+    defaults:
+      agg_time_dimension: truck_opening_date
+
+    entities:
+      - name: truck
+        type: primary
+        expr: truck_id
+
+    dimensions:
+      - name: truck_id
+        type: categorical
+
+      - name: primary_city
+        type: categorical
+
+      - name: region
+        type: categorical
+
+      - name: country
+        type: categorical
+
+      - name: iso_region
+        type: categorical
+
+      - name: iso_country_code
+        type: categorical
+
+      - name: franchise_flag
+        type: categorical
+
+      - name: franchise_id
+        type: categorical
+
+      - name: ev_flag
+        type: categorical
+
+      - name: vehicle_year
+        type: categorical
+
+      - name: truck_opening_date
+        type: time
+        type_params:
+          time_granularity: day
+
+    measures:
+      - name: truck_count
+        description: Number of distinct trucks.
+        agg: count_distinct
+        expr: truck_id
+        create_metric: true
