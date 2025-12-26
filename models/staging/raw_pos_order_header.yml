@@ -1,0 +1,41 @@
+models:
+- name: raw_pos_order_header
+  description: This model serves as a direct representation of the order header data
+    from the source system, capturing essential details about each order placed through
+    the point of sale system. It is used to track and analyze order transactions,
+    including the time and location of the order, the customer involved, and financial
+    details such as discounts and total amounts.
+  columns:
+  - name: order_id
+    description: A unique identifier for each order.
+  - name: truck_id
+    description: The identifier for the truck associated with the order.
+  - name: location_id
+    description: The identifier for the location where the order was placed.
+  - name: customer_id
+    description: The identifier for the customer who placed the order.
+  - name: discount_id
+    description: The identifier for any discount applied to the order.
+  - name: shift_id
+    description: The identifier for the shift during which the order was placed.
+  - name: shift_start_time
+    description: The start time of the shift during which the order was placed.
+  - name: shift_end_time
+    description: The end time of the shift during which the order was placed.
+  - name: order_channel
+    description: The channel through which the order was placed, such as online or
+      in-store.
+  - name: order_ts
+    description: The timestamp when the order was placed.
+  - name: served_ts
+    description: The timestamp when the order was served.
+  - name: order_currency
+    description: The currency in which the order was placed.
+  - name: order_amount
+    description: The total amount of the order before taxes and discounts.
+  - name: order_tax_amount
+    description: The amount of tax applied to the order.
+  - name: order_discount_amount
+    description: The amount of discount applied to the order.
+  - name: order_total
+    description: The final total amount of the order after taxes and discounts.

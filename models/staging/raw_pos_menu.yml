@@ -1,0 +1,29 @@
+models:
+- name: raw_pos_menu
+  description: This model provides a comprehensive view of the menu items available
+    across different truck brands. It includes details such as menu types, item categories,
+    and pricing information, which can be used for analyzing menu offerings and pricing
+    strategies.
+  columns:
+  - name: menu_id
+    description: A unique identifier for each menu.
+  - name: menu_type_id
+    description: A unique identifier for the type of menu.
+  - name: menu_type
+    description: The category or type of the menu, such as breakfast or lunch.
+  - name: truck_brand_name
+    description: The name of the truck brand offering the menu.
+  - name: menu_item_id
+    description: A unique identifier for each menu item.
+  - name: menu_item_name
+    description: The name of the menu item.
+  - name: item_category
+    description: The category of the menu item, such as beverage or entree.
+  - name: item_subcategory
+    description: The subcategory of the menu item, providing more specific classification.
+  - name: cost_of_goods_usd
+    description: The cost of goods sold for the menu item in USD.
+  - name: sale_price_usd
+    description: The sale price of the menu item in USD.
+  - name: menu_item_health_metrics_obj
+    description: A variant object containing health metrics related to the menu item.
